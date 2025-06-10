@@ -46,7 +46,7 @@
       display: block;
     }
     h2 {
-      color: #004d40;
+      color: #005043;
     }
     .logo {
       display: block;
@@ -81,6 +81,8 @@
     <a onclick="showSection('page1')">Li-ion Battery </a>
     <a onclick="showSection('page2')">Second-life Batteries</a>
     <a onclick="showSection('page3')">Parameter Inference</a>
+    <a onclick="showSection('page4')">Dashboard</a>
+
   </nav>
   <main>
     <section id="page1" class="section active">
@@ -122,6 +124,20 @@
       <input type="file" id="paramData" accept=".csv" />
       <button onclick="submitParamData()">Run Parameter Estimation</button>
       <div id="results"></div>
+      <h2>Case study 1: Discharge Drive Cycle Test</h2>
+      <p>In the first case study, we tried to infer Thevenin model's circuit elements (R0, R1, C1) for a real-world experiment. The result is shown in the following picture in comparison to the real data.</p>
+      <img src="CurrentVoltage.png" alt="Second-life Battery Use" class="battery-img">
+      Additionally, the parameter inference results are as follows: 
+      <img src="Inference.png" alt="Second-life Battery Use" class="battery-img">
+
+    </section>
+
+    
+    <section id="page4" class="section">
+      <h2>Data Visualisation</h2>
+      <p>We use data Visualisation tools to showcase data and analysis. For instance, we use Tableau to provide an interactive Tableau dashboard visualizing the Electric Vehicle (EV) population in Washington State. The dashboard explores trends in vehicle types, brands, geographical distribution, and registration years based on open data.</p>
+      <img src="Dashboard.png" alt="Second-life Battery Use" class="battery-img">
+
     </section>
   </main>
 
