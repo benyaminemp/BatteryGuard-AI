@@ -17,6 +17,11 @@ Understand what second-life batteries are, why they're critical for sustainabili
 ### 🔹 3. Parameter Inference
 Upload battery data and use AI to estimate circuit elements such as R₀, R₁, and C₁ of a Thevenin model.
 
+
+### 🔹 4. Dashboard
+An interactive Tableau dashboard for visualisation based on open data.
+
+
 ---
 
 ## 🚀 Features
