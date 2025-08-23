@@ -1,4 +1,4 @@
-# 🔋 BatteryGuard AI
+# 🔋 BatteryGuard AI (https://benyaminemp.github.io/BatteryGuard-AI/)
 
 **BatteryGuard AI** is a demo platform that showcases the power of AI in predicting the health and safety of second-life lithium-ion batteries. This project includes a browser-based educational and interactive tool for:
 
@@ -42,7 +42,7 @@ An interactive Tableau dashboard for visualisation based on open data.
 **Backend (expected setup):**
 - Python (Flask or FastAPI)
 - Pre-trained neural network model (PyTorch)
-- PSO optimization for parameter fitting
+- PSO optimisation for parameter fitting
 
 
 
