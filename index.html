@@ -5,70 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BatteryGuard AI Demo</title>
   <style>
-    body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #004d40;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      background: #00796b;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .section {
-      display: none;
-    }
-    .active {
-      display: block;
-    }
-    h2 {
-      color: #005043;
-    }
-    .logo {
-      display: block;
-      margin: 0 auto 1rem;
-      max-width: 200px;
-    }
-    img.battery-img {
-      max-width: 100%;
-      margin: 1rem 0;
-      border-radius: 6px;
-    }
-    input[type="file"], button {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-    #results {
-      background: #e0f2f1;
-      padding: 1rem;
-      margin-top: 1rem;
-      border-left: 5px solid #004d40;
-    }
+    <link rel="stylesheet" href="style.css" />
   </style>
 </head>
 <body>
@@ -142,36 +79,8 @@
   </main>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    async function submitParamData() {
-      const file = document.getElementById("paramData").files[0];
-      if (!file) return alert("Please upload a .csv file");
-
-      const formData = new FormData();
-      formData.append("file", file);
-
-      try {
-        const res = await fetch("http://localhost:5000/api/estimate", {
-          method: "POST",
-          body: formData
-        });
-        const result = await res.json();
-        document.getElementById("results").innerHTML = `
-          <h3>Estimated Parameters</h3>
-          <p>R0: ${result.R0}</p>
-          <p>R1: ${result.R1}</p>
-          <p>C1: ${result.C1}</p>
-          <p>Other Info: ${result.notes}</p>
-        `;
-      } catch (err) {
-        alert("Estimation failed. Ensure backend is running and the file is valid.");
-        console.error(err);
-      }
-    }
+    <script src="script.js" defer></script>
   </script>
 </body>
 </html>
+
