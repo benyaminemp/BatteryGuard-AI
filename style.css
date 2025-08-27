@@ -1,0 +1,65 @@
+
+body {
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+header {
+  background: #b71c1c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav {
+  background: #d32f2f;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.section {
+  display: none;
+}
+.active {
+  display: block;
+}
+h2 {
+  color: #b71c1c;
+}
+.logo {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 200px;
+}
+img.battery-img {
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+input[type="file"], button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+#results {
+  background: #ffebee;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 5px solid #b71c1c;
+}
