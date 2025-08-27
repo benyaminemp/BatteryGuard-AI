@@ -1,75 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BatteryGuard AI Demo</title>
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #004d40;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      background: #00796b;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .section {
-      display: none;
-    }
-    .active {
-      display: block;
-    }
-    h2 {
-      color: #005043;
-    }
-    .logo {
-      display: block;
-      margin: 0 auto 1rem;
-      max-width: 200px;
-    }
-    img.battery-img {
-      max-width: 100%;
-      margin: 1rem 0;
-      border-radius: 6px;
-    }
-    input[type="file"], button {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-    #results {
-      background: #e0f2f1;
-      padding: 1rem;
-      margin-top: 1rem;
-      border-left: 5px solid #004d40;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -78,100 +15,45 @@
     <p>AI-powered health check for second-life Li-ion batteries</p>
   </header>
   <nav>
-    <a onclick="showSection('page1')">Li-ion Battery </a>
+    <a onclick="showSection('page1')">Li-ion Battery</a>
     <a onclick="showSection('page2')">Second-life Batteries</a>
     <a onclick="showSection('page3')">Parameter Inference</a>
     <a onclick="showSection('page4')">Dashboard</a>
-
+    <a onclick="showSection('contact')">Contact Us</a>
   </nav>
   <main>
     <section id="page1" class="section active">
       <h2>Li-ion Batteries</h2>
-      <p>A lithium-ion or Li-ion battery is a type of rechargeable battery that uses the reversible intercalation of Li⁺ ions into electronically conducting solids to store energy.</p>
-      <img src="LiBattery.jpg" alt="Battery Example" class="battery-img">
-      <p>Li-ion batteries are widely used due to their high energy density, long cycle life, and lightweight design in comparison to the other types of batteries.</p>
-      <h2>Battery Modelling</h2>
-      <p> Battery modelling uses mathematical models to simulate and analyze battery behavior, predicting performance, lifespan, and safety. These models help optimize battery designs, improve battery management systems, and understand the impact of various factors like temperature and aging.</p>      
-      <img src="ECMModel.webp" alt="Battery Example" class="battery-img">
-        <p> Battery modelling helps reduce testing costs and time, and allows simulation of battery behaviour under different conditions.
-        For instance, the Thevenin equivalent circuit is a method for simplifying a complex electrical circuit into a single voltage source in series with a single resistance, as seen from the load terminals. This simplification makes circuit analysis easier and provides a useful representation for understanding how a complex circuit behaves from the perspective of its output. </p>
-
-      <h2>Parameterisation</h2>
-      <p>Parameterizing a battery model involves determining the specific values of its parameters to accurately represent the battery's behavior. This is typically done by fitting the model to experimental data obtained through various testing procedures like GITT or HPPC. The extracted parameters are then used to predict the battery's performance under different conditions.</p> 
-        
-      <img src="Parameterisation.jpg" alt="Battery Example" class="battery-img">
-      <p>Battery models require key internal parameters (e.g., resistance, capacitance in Thevenin model) which are difficult to measure directly. So, we are able to use neural networks to infer these from experimental data.</p>
-
+      <p>A lithium-ion or Li-ion battery is a type of rechargeable battery...</p>
     </section>
 
     <section id="page2" class="section">
       <h2>Second-life Batteries</h2>
-      <p>Second-life batteries are used EV batteries repurposed for applications like home energy storage and off-grid power systems. Second life batteries are ones that have reached the end of their "automotive" life but still have a residual capacity of about 70-80%. This means they can be used in stationary systems, in combination with renewable energy generation, such as wind and solar, and/or to supply services to the electricity network.</p>
-      <img src="EVBatteryCycleLife.png" alt="Second-life Battery Use" class="battery-img">
-      <p>They provide a sustainable way to reuse valuable resources, reduce waste, and support energy access in underserved regions.</p>
-
-      <h2>State-of-Health</h2>
-      <p>Battery State of Health (SoH) refers to the remaining capacity and overall condition of a battery compared to its original, new state. It's a percentage indicating how much the battery's performance has degraded over time due to aging and use. A 100% SoH represents a new battery, while a battery at its end-of-life might have an SoH of 70-80% or less.    </p>
-
-      <h2>Measure SoH Using Battery Models</h2>
-      <p>Measuring SoH using battery models involves estimating the remaining capacity of a battery compared to its original capacity. This can be done by various methods, including model-based approaches that utilize physical battery models or data-driven methods like machine learning. Battery models enable non-invasive estimation of battery health and safety, which is crucial for second-life systems operated by non-experts.</p>
-      <img src="SOH.png" alt="Second-life Battery Use" class="battery-img">
+      <p>Second-life batteries are used EV batteries repurposed for applications...</p>
     </section>
 
     <section id="page3" class="section">
       <h2>Infer Thevenin Model Parameters</h2>
-      <p>Upload your battery dataset below to estimate circuit elements (R0, R1, C1, etc.) using the trained neural network and PSO optimization.</p>
+      <p>Upload your battery dataset...</p>
       <input type="file" id="paramData" accept=".csv" />
       <button onclick="submitParamData()">Run Parameter Estimation</button>
       <div id="results"></div>
-      <h2>Case study 1: Discharge Drive Cycle Test</h2>
-      <p>In the first case study, we tried to infer Thevenin model's circuit elements (R0, R1, C1) for a real-world experiment. The result is shown in the following picture in comparison to the real data.</p>
-      <img src="CurrentVoltage.png" alt="Second-life Battery Use" class="battery-img">
-      Additionally, the parameter inference results are as follows: 
-      <img src="Inference.png" alt="Second-life Battery Use" class="battery-img">
-
     </section>
 
-    
     <section id="page4" class="section">
       <h2>Data Visualisation</h2>
-      <p>We use data Visualisation tools to showcase data and analysis. For instance, we use Tableau to provide an interactive Tableau dashboard visualizing the Electric Vehicle (EV) population in Washington State. The dashboard explores trends in vehicle types, brands, geographical distribution, and registration years based on open data.</p>
-      <img src="Dashboard.png" alt="Second-life Battery Use" class="battery-img">
+      <p>We use data Visualisation tools...</p>
+    </section>
 
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <p>If you’d like to collaborate, pilot BatteryGuard AI, or offer support, feel free to reach out:</p>
+      <ul>
+        <li><strong>Email:</strong> benyamin.ebrahi@gmail.com</li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/benyaminemp" target="_blank">benyaminemp</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/benyaminemp" target="_blank">github.com/benyaminemp</a></li>
+      </ul>
     </section>
   </main>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    async function submitParamData() {
-      const file = document.getElementById("paramData").files[0];
-      if (!file) return alert("Please upload a .csv file");
-
-      const formData = new FormData();
-      formData.append("file", file);
-
-      try {
-        const res = await fetch("http://localhost:5000/api/estimate", {
-          method: "POST",
-          body: formData
-        });
-        const result = await res.json();
-        document.getElementById("results").innerHTML = `
-          <h3>Estimated Parameters</h3>
-          <p>R0: ${result.R0}</p>
-          <p>R1: ${result.R1}</p>
-          <p>C1: ${result.C1}</p>
-          <p>Other Info: ${result.notes}</p>
-        `;
-      } catch (err) {
-        alert("Estimation failed. Ensure backend is running and the file is valid.");
-        console.error(err);
-      }
-    }
-  </script>
 </body>
 </html>
